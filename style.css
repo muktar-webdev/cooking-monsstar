@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 * {
   padding: 0;
   margin: 0;
@@ -13,10 +15,11 @@ body {
   font-weight: 300;
   font-size: 1.05rem;
   line-height: 1.6;
-  font-family: "Poppins", sans-serif;
+  font-family:'Roboto', sans-serif;;
+  background-color:#EDD263 ;
 }
 
-/* Search Part Start  */
+/* --search part start -- */
 
 .btn {
   font-family: inherit;
@@ -38,7 +41,7 @@ body {
   max-width: 1300px;
   margin: 0 auto;
   padding: 2rem;
-  background-color: #ffff;
+  background-color: #EDD263;
   text-align: center;
 }
 .meal-search {
@@ -65,10 +68,10 @@ body {
     border: 1px solid var(--color1);
     color: var(--color2);
     border-radius: 4px;
-    background-color: #ffffffc9;
+    background-color: #F8F7F5;
 }
 .search-control::placeholder{
-    color: gray;
+    color: 989898;
 }
 .search-btn{
     width: 55px;
@@ -82,11 +85,10 @@ body {
 .search-btn:hover{
     background:var(--color1);
 }
+/* --Search Part End -- */
 
 
-/* --Search Part End */
-
-/*  */
+/* --meal item start -- */
 
 .meal-result{
     margin-top: 4rem;
@@ -96,9 +98,11 @@ body {
 }
 
 .meal-item{
-    border-radius: 1rem;
+    width: 90%;
+    height: 95%;
+    border-radius: 5px;
     overflow: hidden;
-    box-shadow: 0 4px 21px 2px rgba(0, 0, 0, 0.79) ;
+    box-shadow: 0 4px 8px 0px #140114 ;
     margin: 2rem 0;
 }
 
@@ -112,34 +116,36 @@ body {
 .meal-name h3{
     font-size: 1.4rem;
 }
+
+/* --recipe btn start -- */
 .recipe-btn{
     text-decoration: none;
     color: #fff;
     background: black;
-    font-weight: 500;
-    font-size: 1.1rem;
+    font-weight: 400;
+    font-size: 1rem;
     padding: 0.75rem 0;
     display: block;
-    width: 175px;
+    width: 150px;
     margin: 1rem auto;
-    border-radius: 2rem;
-
+    border-radius:10px;
     transition: all 0.4s linear;
 }
 .recipe-btn:hover{
     background-color: var(--color1);
 }
+/* --recipe btn end -- */
 
 
-/* --Meal Details-- */
+
+/* --Meal Details start -- */
 .meal-details{
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    color: #fff;
-    background: var(--color1);
-    
+    color: #140114;
+    background: #FFFFFF;
     border-radius: 1rem;
     width: 90%;
     height: 90%;
@@ -149,7 +155,7 @@ body {
 }
 
 .meal-details::-webkit-scrollbar{
-    width: 10px;
+    width: 1px;
 }
 .meal-details::-webkit-scrollbar-thumb{
     background:#f0f0f0;
@@ -261,6 +267,6 @@ padding: 1rem 0;
 
 @media screen and (min-width:992px){
     #meal{
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(4,1fr);
     }
 }

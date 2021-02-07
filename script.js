@@ -6,12 +6,9 @@ const recipeCloseBtn = document.getElementById("recipe-close-btn");
 //-- Event Listener handler --//
 searchBtn.addEventListener("click", getMealList);
 mealList.addEventListener("click", getMealRecipe);
-recipeCloseBtn.addEventListener('click',() =>{
-    mealDetailsContent.parentElement.classList.remove('showRecipe');
+recipeCloseBtn.addEventListener("click", () => {
+  mealDetailsContent.parentElement.classList.remove("showRecipe");
 });
-
-
-
 
 // ---FUNCTION PART--//
 
@@ -69,16 +66,13 @@ function mealRecipeModal(meal) {
   meal = meal[0];
   let html = `
                     <h2 class="recipe-title">${meal.strMeal}</h2>
+                    <div class="recipe-meal-img">
+                            <img src="${meal.strMealThumb}" alt="food">
+                        </div>
                         <p class="recipe-category">${meal.strCategory}</p>
                         <div class="recipe-instruct">
                             <h3>Instructions:</h3>
                             <p>${meal.strInstructions}</p>
-                        </div>
-                        <div class="recipe-meal-img">
-                            <img src="${meal.strMealThumb}" alt="food">
-                        </div>
-                        <div class="recipe-link">
-                            <a href="${meal.strYoutube}" target="_blank">Watch Video</a>
                         </div>
     
     `;
@@ -86,7 +80,4 @@ function mealRecipeModal(meal) {
   mealDetailsContent.parentElement.classList.add("showRecipe");
 }
 
-
-
 // --CloseBtn Event Handler Function --//
-
