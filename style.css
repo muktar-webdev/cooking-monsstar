@@ -208,6 +208,10 @@ body {
     margin: 2rem;
 }
 
+.meal-details-content h2 {
+    margin-top: 1rem;
+}
+
 .meal-details-content p:not(.recipe-category) {
     padding: 1rem 0;
 }
@@ -246,9 +250,9 @@ body {
 }
 
 .recipe-meal-img img {
-    width: 200px;
+    width: 300px;
     height: 200px;
-    border-radius: 50%;
+    border-radius: 10%;
     margin: 0 auto;
     display: block;
 }

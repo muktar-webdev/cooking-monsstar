@@ -63,20 +63,27 @@ function getMealRecipe(e) {
     }
 }
 
-// .--create a modal --//
+// .--meal details --//
 function mealRecipeModal(meal) {
     console.log(meal);
     meal = meal[0];
     let html = `
-                    <h2 class="recipe-title">${meal.strMeal}</h2>
                     <div class="recipe-meal-img">
                             <img src="${meal.strMealThumb}" alt="food">
-                        </div>
-                        <p class="recipe-category">${meal.strCategory}</p>
-                        <div class="recipe-instruct">
-                            <h3>Instructions:</h3>
-                            <p>${meal.strInstructions}</p>
-                        </div>
+                     </div>
+                    <h2 class="recipe-title">${meal.strMeal}</h2>
+                    <p class="recipe-category">1.Origin :${meal.strArea}</p> \n
+                    <p class="recipe-category">2.Type : ${meal.strCategory}</p>
+                    
+                    <div class="recipe-instruct" style="text-align:center; color:goldenrod">
+                    <h1 style="text-align:center;color:black" >Ingredients:</h1>
+                    <hr style = "color:black"><hr style = "color:black">
+                    <p>1.${meal.strIngredient1}</p>
+                    <p>2.${meal.strIngredient2}</p>
+                    <p>3.${meal.strIngredient3}</p>
+                    <p>4.${meal.strIngredient4}</p>
+                    <p>5.${meal.strIngredient5}</p>
+                    </div>
     
     `;
     mealDetailsContent.innerHTML = html;
