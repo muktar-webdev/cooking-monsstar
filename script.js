@@ -12,14 +12,12 @@ recipeCloseBtn.addEventListener("click", () => {
 });
 
 
-// ---FUNCTION PART--//
-
-//1. --Find by Ingredients --//
+// --- Find all meals by first letter ---//
 function getMealList() {
     let searchInputTxt = document.getElementById("search-input").value;
 
     fetch(
-            `https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputTxt}`
+            `https://www.themealdb.com/api/json/v1/1/search.php?f=${searchInputTxt}`
         )
         .then((response) => response.json())
         .then((data) => {
@@ -33,7 +31,7 @@ function getMealList() {
                         <div class="meal-img">
                             <img src="${meal.strMealThumb}" alt="food">
                         </div>
-                        <div class="meal-name">
+                        <div class="meal-name" style="background:white;">
                             <h3>${meal.strMeal}</h3>
                             <a href="#" class="recipe-btn">Get Recipe</a>
                         </div>
@@ -51,7 +49,8 @@ function getMealList() {
 
 
 
-//2--For Creating recipe of the meal--//
+
+//--For Creating recipe of the meal--//
 function getMealRecipe(e) {
     e.preventDefault();
     if (e.target.classList.contains("recipe-btn")) {
@@ -64,7 +63,7 @@ function getMealRecipe(e) {
     }
 }
 
-// 3.--create a modal --//
+// .--create a modal --//
 function mealRecipeModal(meal) {
     console.log(meal);
     meal = meal[0];
@@ -83,5 +82,3 @@ function mealRecipeModal(meal) {
     mealDetailsContent.innerHTML = html;
     mealDetailsContent.parentElement.classList.add("showRecipe");
 }
-
-// --CloseBtn Event Handler Function --//
